@@ -1,0 +1,7 @@
+API-Key: null
+Messages:
+  Player-Not-Found: "&cThat player is currently offline."
+  Language-Selected: "&aTranslating message to &f{language}&a..."
+  Translation-Message: "&aThat message translates to: &f{message}"
+  No-Permission: "&cYou do not have permission to execute this command."
+  Translation-Hover: "&bClick to translate!"

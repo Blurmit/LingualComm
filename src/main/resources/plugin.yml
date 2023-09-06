@@ -1,0 +1,17 @@
+name: LingualComm
+version: '${project.version}'
+main: me.blurmit.lingualcomm.LingualComm
+authors: [ Blurmit ]
+description: A plugin that translates chat messages across languages.
+
+commands:
+  translate:
+    permission: lingualcomm.command.translate
+    description: Allows the player to translate another player's messages
+  translatemessage:
+    permission: lingualcomm.command.translatemessage
+    description: Translates a singular message
+
+permissions:
+  lingualcomm.command.translatemessage:
+    default: true
