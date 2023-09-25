@@ -20,7 +20,14 @@ public enum Language {
     GERMAN("DE", ChatColor.RED, new Pattern(DyeColor.BLACK, PatternType.STRIPE_LEFT), new Pattern(DyeColor.YELLOW, PatternType.STRIPE_RIGHT)),
     ITALIAN("IT", ChatColor.WHITE, new Pattern(DyeColor.GREEN, PatternType.STRIPE_TOP), new Pattern(DyeColor.GREEN, PatternType.STRIPE_TOP), new Pattern(DyeColor.RED, PatternType.STRIPE_BOTTOM), new Pattern(DyeColor.RED, PatternType.STRIPE_BOTTOM)),
     RUSSIAN("RU", ChatColor.WHITE, new Pattern(DyeColor.RED, PatternType.STRIPE_LEFT), new Pattern(DyeColor.RED, PatternType.STRIPE_LEFT), new Pattern(DyeColor.BLACK, PatternType.STRIPE_CENTER), new Pattern(DyeColor.BLACK, PatternType.STRIPE_CENTER), new Pattern(DyeColor.BLACK, PatternType.STRIPE_CENTER)),
-    PORTUGUESE("PT", ChatColor.GREEN, new Pattern(DyeColor.YELLOW, PatternType.RHOMBUS_MIDDLE), new Pattern(DyeColor.BLUE, PatternType.CIRCLE_MIDDLE));
+    PORTUGUESE("PT", ChatColor.GREEN, new Pattern(DyeColor.YELLOW, PatternType.RHOMBUS_MIDDLE), new Pattern(DyeColor.BLUE, PatternType.CIRCLE_MIDDLE)),
+    POLISH("PL", ChatColor.WHITE, new Pattern(DyeColor.RED, PatternType.HALF_HORIZONTAL_MIRROR), new Pattern(DyeColor.WHITE, PatternType.HALF_HORIZONTAL)),
+    CHINESE("ZH", ChatColor.RED, new Pattern(DyeColor.YELLOW, PatternType.SQUARE_BOTTOM_LEFT), new Pattern(DyeColor.RED, PatternType.STRIPE_SMALL), new Pattern(DyeColor.RED, PatternType.BORDER), new Pattern(DyeColor.RED, PatternType.BRICKS)),
+    SWEDISH("SV", ChatColor.BLUE, new Pattern(DyeColor.YELLOW, PatternType.STRAIGHT_CROSS), new Pattern(DyeColor.YELLOW, PatternType.STRIPE_CENTER)),
+    SLOVENIAN("SL", ChatColor.WHITE, new Pattern(DyeColor.BLUE, PatternType.BRICKS), new Pattern(DyeColor.WHITE, PatternType.HALF_HORIZONTAL), new Pattern(DyeColor.WHITE, PatternType.BORDER), new Pattern(DyeColor.WHITE, PatternType.STRIPE_BOTTOM), new Pattern(DyeColor.RED, PatternType.HALF_VERTICAL_MIRROR), new Pattern(DyeColor.BLUE, PatternType.STRIPE_CENTER)),
+    DUTCH("NL", ChatColor.WHITE, new Pattern(DyeColor.WHITE, PatternType.STRIPE_TOP), new Pattern(DyeColor.WHITE, PatternType.STRIPE_BOTTOM), new Pattern(DyeColor.RED, PatternType.STRIPE_TOP), new Pattern(DyeColor.BLUE, PatternType.STRIPE_BOTTOM)),
+    TURKISH("TR", ChatColor.RED, new Pattern(DyeColor.WHITE, PatternType.CIRCLE_MIDDLE), new Pattern(DyeColor.RED, PatternType.FLOWER), new Pattern(DyeColor.RED, PatternType.STRIPE_RIGHT)),
+    JAPANESE("JP", ChatColor.WHITE, new Pattern(DyeColor.RED, PatternType.CIRCLE_MIDDLE), new Pattern(DyeColor.WHITE, PatternType.BORDER));
 
     private final String internalName;
     private final ChatColor color;

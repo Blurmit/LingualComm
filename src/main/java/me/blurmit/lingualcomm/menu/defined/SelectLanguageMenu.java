@@ -15,6 +15,7 @@ import me.blurmit.lingualcomm.util.ChatUtil;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 public class SelectLanguageMenu extends Menu {
@@ -29,11 +30,18 @@ public class SelectLanguageMenu extends Menu {
     public SelectLanguageMenu(LingualComm plugin, OfflinePlayer target) {
         this.plugin = plugin;
         this.target = target;
-
         this.languageSelectedMessage = ChatUtil.getMessage("Language-Selected");
 
+        int skip = 10;
         for (Language lang : Language.values()) {
-            addButton(new MenuButton(lang.getBanner()).setSlot(10 + lang.ordinal()));
+            int rawID = lang.ordinal();
+
+            if (rawID != 0 && rawID % 7 == 0) {
+                skip = skip + 2;
+            }
+
+            int langID = skip + rawID;
+            addButton(new MenuButton(lang.getBanner()).setSlot(langID));
         }
     }
 
@@ -46,7 +54,16 @@ public class SelectLanguageMenu extends Menu {
         this.translationMessage = ChatUtil.getMessage("Translation-Message");
 
         for (Language lang : Language.values()) {
-            addButton(new MenuButton(lang.getBanner()).setSlot(10 + lang.ordinal()));
+            Set<Integer> border = plugin.getMenuManager().getGuiBorder(getInventory());
+            int langID = 10 + lang.ordinal();
+
+            for (int i = langID; i < getSlots(); i++) {
+                if (border.contains(i)) {
+                    continue;
+                }
+
+                addButton(new MenuButton(lang.getBanner()).setSlot(langID));
+            }
         }
     }
 
@@ -89,7 +106,7 @@ public class SelectLanguageMenu extends Menu {
 
     @Override
     public int getSlots() {
-        return 27;
+        return (int) (27 + (9 * (Math.floor(Language.values().length / 9f))));
     }
 
     @Override
