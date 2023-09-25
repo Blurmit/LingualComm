@@ -13,10 +13,7 @@ import me.blurmit.lingualcomm.menu.MenuType;
 import me.blurmit.lingualcomm.translation.Translation;
 import me.blurmit.lingualcomm.util.ChatUtil;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class SelectLanguageMenu extends Menu {
 
@@ -69,7 +66,12 @@ public class SelectLanguageMenu extends Menu {
     @Override
     public void callButton(InventoryClickEvent event) {
         int slot = event.getSlot();
-        int index = slot - 10;
+        int index = Arrays.stream(Language.values()).map(Language::getSlot).filter(s -> s == slot).findFirst().orElse(-1);
+
+        if (index == -1) {
+            return;
+        }
+
         Language language = Language.values()[index];
 
         Player player = (Player) event.getWhoClicked();
