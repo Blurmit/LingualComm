@@ -66,13 +66,11 @@ public class SelectLanguageMenu extends Menu {
     @Override
     public void callButton(InventoryClickEvent event) {
         int slot = event.getSlot();
-        int index = Arrays.stream(Language.values()).map(Language::getSlot).filter(s -> s == slot).findFirst().orElse(-1);
+        Language language = Arrays.stream(Language.values()).filter(lang -> lang.getSlot() == slot).findFirst().orElse(null);
 
-        if (index == -1) {
+        if (language == null) {
             return;
         }
-
-        Language language = Language.values()[index];
 
         Player player = (Player) event.getWhoClicked();
         String name = Language.getFancyName(language);
