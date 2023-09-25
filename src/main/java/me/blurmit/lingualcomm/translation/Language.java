@@ -27,7 +27,7 @@ public enum Language {
     SLOVENIAN("SL", ChatColor.WHITE, 22, new Pattern(DyeColor.BLUE, PatternType.BRICKS), new Pattern(DyeColor.WHITE, PatternType.HALF_HORIZONTAL), new Pattern(DyeColor.WHITE, PatternType.BORDER), new Pattern(DyeColor.WHITE, PatternType.STRIPE_BOTTOM), new Pattern(DyeColor.RED, PatternType.HALF_VERTICAL_MIRROR), new Pattern(DyeColor.BLUE, PatternType.STRIPE_CENTER)),
     DUTCH("NL", ChatColor.WHITE, 23, new Pattern(DyeColor.WHITE, PatternType.STRIPE_TOP), new Pattern(DyeColor.WHITE, PatternType.STRIPE_BOTTOM), new Pattern(DyeColor.RED, PatternType.STRIPE_TOP), new Pattern(DyeColor.BLUE, PatternType.STRIPE_BOTTOM)),
     TURKISH("TR", ChatColor.RED, 24, new Pattern(DyeColor.WHITE, PatternType.CIRCLE_MIDDLE), new Pattern(DyeColor.RED, PatternType.FLOWER), new Pattern(DyeColor.RED, PatternType.STRIPE_RIGHT)),
-    JAPANESE("JP", ChatColor.WHITE, 25, new Pattern(DyeColor.RED, PatternType.CIRCLE_MIDDLE), new Pattern(DyeColor.WHITE, PatternType.BORDER));
+    JAPANESE("JA", ChatColor.WHITE, 25, new Pattern(DyeColor.RED, PatternType.CIRCLE_MIDDLE), new Pattern(DyeColor.WHITE, PatternType.BORDER));
 
     private final String internalName;
     private final int slot;
