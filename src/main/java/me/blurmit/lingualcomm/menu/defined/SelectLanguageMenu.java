@@ -53,17 +53,16 @@ public class SelectLanguageMenu extends Menu {
         this.languageSelectedMessage = ChatUtil.getMessage("Language-Selected");
         this.translationMessage = ChatUtil.getMessage("Translation-Message");
 
+        int skip = 10;
         for (Language lang : Language.values()) {
-            Set<Integer> border = plugin.getMenuManager().getGuiBorder(getInventory());
-            int langID = 10 + lang.ordinal();
+            int rawID = lang.ordinal();
 
-            for (int i = langID; i < getSlots(); i++) {
-                if (border.contains(i)) {
-                    continue;
-                }
-
-                addButton(new MenuButton(lang.getBanner()).setSlot(langID));
+            if (rawID != 0 && rawID % 7 == 0) {
+                skip = skip + 2;
             }
+
+            int langID = skip + rawID;
+            addButton(new MenuButton(lang.getBanner()).setSlot(langID));
         }
     }
 
